@@ -23,7 +23,27 @@
 					<img ng-src="{{product.images[0].thumb}}">
 					<br/>{{product.description}}
 				</h3>
-			</li>
-		</ul>	
+				<section ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
+						<li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
+						<li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Review</a></li>
+					</ul>
+					<div class="panel" ng-show="panel.isSelected(1)">
+						<h4>Description</h4>
+						<p>{{product.description}}</p>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(2)">
+						<h4>Specifications</h4>
+						<p>None yet</p>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(3)">
+						<h4>Review</h4>
+						<p>None yet</p>
+					</div>
+				</section>
+				
+			</li>			
+		</ul>		
 	</body>
 </html>
