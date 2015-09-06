@@ -1,0 +1,28 @@
+.list-group {
+	text-align: center;
+	padding-right: 39%;
+    padding-left: 39%;
+}
+
+.list-group-item {
+	/*
+	padding-right: 50%;
+    padding-left: 21%;
+    */
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+select {
+    vertical-align: top;
+}
+
+.ng-invalid.ng-dirty{
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty{
+	border-color: #78FA89;
+}
