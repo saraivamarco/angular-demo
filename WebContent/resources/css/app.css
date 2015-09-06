@@ -14,3 +14,15 @@
 h1, h2 {
 	text-align: center;
 }
+
+select {
+    vertical-align: top;
+}
+
+.ng-invalid.ng-dirty{
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty{
+	border-color: #78FA89;
+}
