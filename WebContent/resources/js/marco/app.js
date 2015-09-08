@@ -1,8 +1,11 @@
 /**
  * Angular.js javascript coding
+ * @author marco
  */
 (function(){
 	var app = angular.module('store', []);
+	
+	/* Controllers */
 	
 	/**
 	 * StoreController
@@ -15,8 +18,7 @@
 	 * PanelController
 	 */
 	app.controller('PanelController', function(){
-		this.tab = 1;
-		
+		this.tab = 1;		
 		this.selectTab = function(setTab){
 			this.tab=setTab;
 		};
@@ -37,7 +39,34 @@
 		};
 	});
 	
+	/* Directives */
+	app.directive('productTitle', function(){
+		return {
+			restrict: 'A', /* E stands for html element and A stands for attribute */
+			templateUrl: 'product-title.jsp'
+		};
+	});
 	
+	/* Directives */
+	app.directive('productPanels', function(){
+		return {
+			restrict: 'E', /* E stands for html element and A stands for attribute */
+			templateUrl: 'product-panels.jsp',
+			controller: function(){ //Same code as in PanelController
+				this.tab = 1;				
+				this.selectTab = function(setTab){
+					this.tab=setTab;
+				};
+				this.isSelected = function(checkTab){
+					return this.tab===checkTab;
+				};
+			},
+			controllerAs: 'panel'
+		};
+	});
+	
+	
+	/* Json Objects */
 	var gems = [
 		{
 			name: 'Dodecahedron',
@@ -45,12 +74,12 @@
 			description: 'This is a Dodecahedron.',
 			images: [
 			   {
-				   full: 'resources/images/dodecahedron-01-full.png',
-				   thumb: 'resources/images/dodecahedron-01-thumb.png'
+				   full: 'resources/images/marco/dodecahedron-01-full.png',
+				   thumb: 'resources/images/marco/dodecahedron-01-thumb.png'
 			   },
 			   {
-				   full: 'resources/images/dodecahedron-02-full.jpg',
-				   thumb: 'resources/images/dodecahedron-02-thumb.jpg'
+				   full: 'resources/images/marco/dodecahedron-02-full.jpg',
+				   thumb: 'resources/images/marco/dodecahedron-02-thumb.jpg'
 			   }
 			],
 			reviews:[
@@ -63,8 +92,8 @@
 			price: 5.95,
 			description: 'This is a Pentagonal Gem.',
 			images: [{
-				full: 'resources/images/pentagonal-01-full.png',
-				thumb: 'resources/images/pentagonal-01-thumb.png'
+				full: 'resources/images/marco/pentagonal-01-full.png',
+				thumb: 'resources/images/marco/pentagonal-01-thumb.png'
 			}],
 			reviews:[
 			         /*
