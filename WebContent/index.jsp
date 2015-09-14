@@ -13,6 +13,7 @@
 		<!-- Marco's code -->
 		<link rel="shortcut icon" href="resources/images/marco/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="resources/css/marco/app.css">
+		<script type="text/javascript" src="resources/js/marco/products.js"></script>
 		<script type="text/javascript" src="resources/js/marco/app.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Angular Demo</title>
