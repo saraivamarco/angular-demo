@@ -8,12 +8,25 @@
 	/* Controllers */
 	
 	/**
-	 * StoreController
-	 */
+	 * StoreController (without services)
+	 *//*
 	app.controller('StoreController', function(){
 		this.products = gems;
 	});
+	*/
 	
+	/**
+	 * StoreController (with services)
+	 */
+	app.controller('StoreController', ['$http', function($http){		
+		var store = this;
+		store.products=[];
+		
+		$http.get('/products.json').success(function(data){
+			store.products=data;
+		});
+	}]);
+		
 	/**
 	 * PanelController
 	 */
